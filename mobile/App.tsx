@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
-
-const API_BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL;
+import { API_BASE_URL } from './src/app.config';
 
 export default function App() {
   const [msg, setMsg] = useState<string>('loading...');
