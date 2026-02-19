@@ -25,10 +25,11 @@ app.get('/db-health', async (_req, res) => {
 });
 
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+const baseUrl = process.env.RENDER_EXTERNAL_URL ?? `http://localhost:${port}`;
 
 app.listen(port, '0.0.0.0', () => {
   console.log('-----------------------------------------');
-  console.log(`🚀 Backend: http://localhost:${port}`);
-  console.log(`📡 Health: http://localhost:${port}/health`);
+  console.log(`🚀 Backend: ${baseUrl}`);
+  console.log(`📡 Health: ${baseUrl}/health`);
   console.log('-----------------------------------------');
 });
