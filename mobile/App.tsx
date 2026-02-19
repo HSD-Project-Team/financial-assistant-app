@@ -16,7 +16,10 @@ export default function App() {
     <View style={{ padding: 32 }}>
       <Text>API: {API_BASE_URL}</Text>
       <Text>Health: {msg}</Text>
+<<<<<<< HEAD
       <Text>Test</Text>
+=======
+>>>>>>> a8bd354 (feat: initial monorepo setup)
     </View>
   );
 }
