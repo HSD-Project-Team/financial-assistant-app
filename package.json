@@ -1,0 +1,68 @@
+{
+  "name": "finance-assistant-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.29.3",
+  "scripts": {
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "dev": "pnpm db:start && pnpm -C backend dev",
+    "db:clean": "node tools/db-clean.mjs",
+    "dev:clean": "pnpm db:clean && pnpm db:start && pnpm -C backend dev",
+    "dev:db": "pnpm db:start",
+    "dev:backend": "pnpm -C backend dev",
+    "dev:mobile": "pnpm -C mobile start",
+    "dev:ai": "cd ai-services && python -m uvicorn app.main:app --reload --port 8000",
+    "dev:all": "concurrently -n DB,BACKEND,MOBILE -c auto \"pnpm dev:db\" \"pnpm dev:backend\" \"pnpm dev:mobile\"",
+    "build:shared": "pnpm -C shared build",
+    "typecheck": "pnpm -C shared build && pnpm -r typecheck",
+    "prepare": "husky",
+    "lint:backend": "pnpm -C backend lint",
+    "lint:mobile": "pnpm -C mobile lint",
+    "lint": "pnpm lint:backend && pnpm lint:mobile",
+    "stop": "pnpm db:stop",
+    "check": "pnpm format:check && pnpm -C shared build && pnpm -C backend typecheck && pnpm -C backend lint && pnpm -C backend build && pnpm -C mobile typecheck && pnpm -C mobile lint && pnpm ai:check",
+    "db:status": "supabase status",
+    "db:link": "supabase link",
+    "db:diff": "supabase db diff",
+    "db:push": "supabase db push",
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "db:reset": "supabase db reset",
+    "deploy:backend:build": "pnpm install --frozen-lockfile && pnpm -C shared build && pnpm -C backend build",
+    "deploy:backend:start": "pnpm -C backend start",
+    "ai:install": "python -m pip install -r ai-services/requirements.txt -r ai-services/requirements-dev.txt",
+    "ai:lint": "python -m ruff check ai-services",
+    "ai:format": "python -m ruff format ai-services",
+    "ai:format:check": "python -m ruff format --check ai-services",
+    "ai:typecheck": "python -m mypy ai-services/app",
+    "ai:check": "pnpm -s ai:format:check && pnpm -s ai:lint && pnpm -s ai:typecheck"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,md}": "prettier -w"
+  },
+  "engines": {
+    "node": "20.20.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.3.3",
+    "supabase": "^2.76.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "supabase"
+    ]
+  },
+  "dependencies": {
+    "react-dom": "19.1.0",
+    "react-native-web": "^0.21.2"
+  }
+}

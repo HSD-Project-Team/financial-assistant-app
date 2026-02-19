@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+coverage
+pnpm-lock.yaml
+
+.venv
+__pycache__
+
+**/.expo
+**/ios
+**/android
