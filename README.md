@@ -50,4 +50,3 @@ pnpm db:stop       # Lokal Supabase durdur
 ```
 
 Tüm script listesi için `package.json` → `scripts` bölümüne bakın.
-
