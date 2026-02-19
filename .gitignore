@@ -1,0 +1,116 @@
+# ============================================================
+# OS / Editors
+# ============================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnp-debug.log*
+
+# ============================================================
+# Environment files (keep examples)
+# ============================================================
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!.env.*.example
+
+# ============================================================
+# Node / TypeScript
+# ============================================================
+node_modules/
+**/node_modules/
+
+dist/
+**/dist/
+build/
+**/build/
+coverage/
+**/coverage/
+
+*.tsbuildinfo
+*.cache
+
+# pnpm
+.pnpm-store/
+**/.pnpm-store/
+
+# Next / Vite / misc caches (safe even if unused)
+.next/
+out/
+.vite/
+.turbo/
+.cache/
+
+# ============================================================
+# Expo / React Native
+# ============================================================
+.expo/
+**/.expo/
+expo-env.d.ts
+
+# Metro / RN caches
+.metro/
+**/.metro/
+*.hbc
+
+# React Native build outputs (even if you don't commit native folders now)
+android/.gradle/
+android/app/build/
+ios/build/
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+.venv/
+**/.venv/
+venv/
+**/venv/
+.env.venv
+
+.mypy_cache/
+**/.mypy_cache/
+.ruff_cache/
+**/.ruff_cache/
+.pytest_cache/
+**/.pytest_cache/
+
+# ============================================================
+# Supabase (local dev artifacts)
+# ============================================================
+# Supabase CLI generates local state/cache files; keep migrations tracked.
+supabase/.temp/
+**/supabase/.temp/
+supabase/.branches/
+**/supabase/.branches/
+
+# If you use local seed exports, ignore by default
+supabase/seed.sql
+**/supabase/seed.sql
+
+# ============================================================
+# Render / misc
+# ============================================================
+*.local

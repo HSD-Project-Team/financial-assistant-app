@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# Add pre-commit commands below. Keep lightweight to avoid blocking commits.
+# Example: run lint-staged if your repo uses it: `pnpm -s lint-staged`
+
+pnpm -s lint-staged
+
+exit 0

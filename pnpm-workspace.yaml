@@ -1,0 +1,9 @@
+packages:
+  - backend
+  - mobile
+  - shared
+
+ignoredBuiltDependencies:
+  - supabase
+
+nodeLinker: hoisted
