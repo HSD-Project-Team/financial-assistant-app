@@ -16,6 +16,7 @@ export default function App() {
     <View style={{ padding: 32 }}>
       <Text>API: {API_BASE_URL}</Text>
       <Text>Health: {msg}</Text>
+      <Text>Test</Text>
     </View>
   );
 }
