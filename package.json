@@ -6,6 +6,7 @@
     "format": "prettier -w .",
     "format:check": "prettier -c .",
     "dev": "pnpm db:start && pnpm -C backend dev",
+    "backend:dev": "pnpm -C backend dev",
     "db:clean": "node tools/db-clean.mjs",
     "dev:clean": "pnpm db:clean && pnpm db:start && pnpm -C backend dev",
     "dev:db": "pnpm db:start",
