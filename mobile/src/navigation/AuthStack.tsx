@@ -11,15 +11,18 @@ export type AuthStackParamList = {
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
+const LoginScreen = () => <PlaceholderScreen title="Login Screen" />;
+const SignupScreen = () => <PlaceholderScreen title="Signup Screen" />;
+const OTPScreen = () => <PlaceholderScreen title="OTP Screen" />;
+const ForgotPasswordScreen = () => <PlaceholderScreen title="Forgot Password Screen" />;
+
 export default function AuthStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Login">{() => <PlaceholderScreen title="Login Screen" />}</Stack.Screen>
-      <Stack.Screen name="Signup">{() => <PlaceholderScreen title="Signup Screen" />}</Stack.Screen>
-      <Stack.Screen name="OTP">{() => <PlaceholderScreen title="OTP Screen" />}</Stack.Screen>
-      <Stack.Screen name="ForgotPassword">
-        {() => <PlaceholderScreen title="Forgot Password Screen" />}
-      </Stack.Screen>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Signup" component={SignupScreen} />
+      <Stack.Screen name="OTP" component={OTPScreen} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
     </Stack.Navigator>
   );
 }

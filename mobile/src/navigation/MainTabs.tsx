@@ -12,20 +12,24 @@ export type MainTabsParamList = {
 
 const Tab = createBottomTabNavigator<MainTabsParamList>();
 
+const DashboardScreen = () => <PlaceholderScreen title="Dashboard Screen" />;
+
+const TransactionsScreen = () => <PlaceholderScreen title="Transactions Screen" />;
+
+const CenterScreen = () => <PlaceholderScreen title="Center Placeholder" />;
+
+const PlanningScreen = () => <PlaceholderScreen title="Planning Screen" />;
+
+const ProfileScreen = () => <PlaceholderScreen title="Profile Screen" />;
+
 export default function MainTabs() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
-      <Tab.Screen name="Dashboard">
-        {() => <PlaceholderScreen title="Dashboard Screen" />}
-      </Tab.Screen>
-      <Tab.Screen name="Transactions">
-        {() => <PlaceholderScreen title="Transactions Screen" />}
-      </Tab.Screen>
-      <Tab.Screen name="Center">
-        {() => <PlaceholderScreen title="Center Placeholder" />}
-      </Tab.Screen>
-      <Tab.Screen name="Planning">{() => <PlaceholderScreen title="Planning Screen" />}</Tab.Screen>
-      <Tab.Screen name="Profile">{() => <PlaceholderScreen title="Profile Screen" />}</Tab.Screen>
+      <Tab.Screen name="Dashboard" component={DashboardScreen} />
+      <Tab.Screen name="Transactions" component={TransactionsScreen} />
+      <Tab.Screen name="Center" component={CenterScreen} />
+      <Tab.Screen name="Planning" component={PlanningScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }

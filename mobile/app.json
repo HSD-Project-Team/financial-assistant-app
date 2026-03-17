@@ -35,6 +35,7 @@
     },
     "owner": "hsdsakaryaproje",
     "extra": {
+      "apiUrl": "http://localhost:3000",
       "eas": {
         "projectId": "1725de21-62db-4a59-a5a9-4549fd2e55e3"
       }
