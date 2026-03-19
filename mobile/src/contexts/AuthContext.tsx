@@ -28,9 +28,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   useEffect(() => {
     setOnUnauthorized(() => {
-      setIsAuthenticated(false);
+      logout();
     });
-  }, []);
+  }, [logout]);
 
   const value = useMemo(
     () => ({
