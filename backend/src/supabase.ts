@@ -1,10 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
 
+// .env dosyasındaki isimlendirmelerle birebir aynı olmalı!
 const url = process.env.SUPABASE_URL;
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const serviceKey = process.env.SUPABASE_KEY; // Burayı değiştirdik!
 
 if (!url) throw new Error('SUPABASE_URL is missing');
-if (!serviceKey) throw new Error('SUPABASE_SERVICE_ROLE_KEY is missing');
+if (!serviceKey) throw new Error('SUPABASE_KEY is missing');
 
-// Server-side: service role kullanıyoruz (admin)
 export const supabase = createClient(url, serviceKey);
