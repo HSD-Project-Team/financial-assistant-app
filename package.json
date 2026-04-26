@@ -46,6 +46,9 @@
   "devDependencies": {
     "@commitlint/cli": "^20.4.1",
     "@commitlint/config-conventional": "^20.4.1",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.1.0",
+    "@types/node": "^25.6.0",
     "concurrently": "^9.2.1",
     "eslint": "^9.39.2",
     "eslint-plugin-react": "^7.37.5",
@@ -62,7 +65,21 @@
     ]
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.103.3",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "multer": "^2.1.1",
     "react-dom": "19.1.0",
-    "react-native-web": "^0.21.2"
-  }
+    "react-native-web": "^0.21.2",
+    "zod": "^4.3.6"
+  },
+  "version": "1.0.0",
+  "description": "Tam yığın (full-stack) finans asistanı uygulaması.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
